@@ -73,7 +73,7 @@ exports.resolve = (source, file, opts) => {
         alias: Object.assign(config.alias, plugin[1] ? plugin[1].alias : {}),
         extensions: plugin[1] && plugin[1].extensions ? plugin[1].extensions : config.extensions,
       }),
-      { root: [], alias: {}, cwd: projectRootDir },
+      { root: [], alias: {}, cwd: options.projectRootDir || projectRootDir },
     );
 
     const finalSource = stripWebpack(source);
